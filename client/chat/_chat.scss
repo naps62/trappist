@@ -1,0 +1,22 @@
+.Chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: stretch;
+}
+
+.Chat-title {
+}
+
+.Chat-entries {
+  list-style-type: none;
+  flex-grow: 1;
+}
+
+.Chat-input {
+  background-color: $color-chambray;
+  padding: $space;
+  color: $color-buttermilk;
+  font-size: $font-size;
+  text-align: right;
+}

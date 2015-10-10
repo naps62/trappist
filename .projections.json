@@ -1,0 +1,10 @@
+{
+  "*.js": {
+    "alternate": "{}.html",
+    "type": "template"
+  },
+  "*.html": {
+    "alternate": "{}.js",
+    "type": "controller"
+  }
+}
