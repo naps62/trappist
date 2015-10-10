@@ -47,6 +47,10 @@ function newSignal(id, doc) {
 
 window.Helpers = {
   moveToCol: (sprite, col) => {
+    if (!sprite) {
+      return;
+    }
+
     var colWidth = ctx.width / 5;
     sprite.position.x = colWidth * (col - 0.5);
   }
