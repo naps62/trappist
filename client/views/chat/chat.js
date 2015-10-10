@@ -19,7 +19,6 @@ Template.chat.events({
     }
 
     newEntry = {
-      userId: Meteor.userId(),
       value: value
     };
 

@@ -5,9 +5,6 @@ Chats.attachSchema(new SimpleSchema({
     type: [Object],
     defaultValue: []
   },
-  'entries.$.userId': {
-    type: String
-  },
   'entries.$.value': {
     type: Number,
     min: 1,
