@@ -11,16 +11,14 @@ Template.chat.helpers({
 
 Template.chat.events({
   'keyup #txtInput': function(event, tpl) {
-    if (event.keyCode === 13) {
-      newEntry = {
-        userId: Meteor.userId(),
-        value: parseInt(event.target.value)
-      }
-      Chats.update(Template.instance().data.id, {
-        $push: { entries: newEntry }
-      });
-      event.target.value = '';
+    newEntry = {
+      userId: Meteor.userId(),
+      value: parseInt(event.target.value)
     }
+    Chats.update(Template.instance().data.id, {
+      $push: { entries: newEntry }
+    });
+    event.target.value = '';
   }
 });
 

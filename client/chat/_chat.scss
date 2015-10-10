@@ -6,11 +6,28 @@
 }
 
 .Chat-title {
+  text-align: center;
+  padding: $space;
+}
+
+.Chat-title,
+.Chat-input {
+  flex-shrink: 0;
+}
+
+.Chat-entriesWrapper {
+  list-style-type: none;
+  flex-grow: 1;
+  animation: numberIn 2s;
+  position: relative;
+  overflow: hidden;
 }
 
 .Chat-entries {
-  list-style-type: none;
-  flex-grow: 1;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
 }
 
 .Chat-input {
@@ -18,5 +35,10 @@
   padding: $space;
   color: $color-buttermilk;
   font-size: $font-size;
-  text-align: right;
+  text-align: center;
+}
+
+@keyframes numberIn {
+  0% { opacity: 0%; }
+  100% { opacity: 100% }
 }

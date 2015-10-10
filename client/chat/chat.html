@@ -1,11 +1,13 @@
 <template name="chat">
   <div class="Chat">
     <div class="Chat-title">{{title}}</div>
-    <ul class="Chat-entries">asdasd
-      {{#each entries}}
-        <li>{{value}}</li>
-      {{/each}}
-    </ul>
+    <div class="Chat-entriesWrapper">
+      <ul class="Chat-entries">
+        {{#each entries}}
+          <li>{{value}}</li>
+        {{/each}}
+      </ul>
+    </div>
     <input type="text" class="Chat-input" id="txtInput">
   </div>
 </template>

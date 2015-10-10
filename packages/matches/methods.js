@@ -17,7 +17,7 @@ Meteor.methods({
         Meteor.setTimeout(callback, 10000);
       };
 
-      Meteor.setTimeout(callback, 10000);
+      // Meteor.setTimeout(callback, 10000);
     }
   }
 });
