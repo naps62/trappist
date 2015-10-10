@@ -21,6 +21,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 core
 aldeed:simple-schema
 aldeed:collection2
-matches
 mquandalle:jade
 chats

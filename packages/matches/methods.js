@@ -8,16 +8,21 @@ Meteor.methods({
 
   'matches.start': function(matchId) {
     if (Meteor.isServer) {
+      if (Matches.findOne(matchId).started) {
+        return;
+      };
+
       Matches.update(matchId, { $set: { started: true } });
 
       match = Matches.findOne(matchId);
       callback = () => {
-        Chats.clearEntries(match.gabrielChatId);
-        Chats.clearEntries(match.justoChatId);
-        Meteor.setTimeout(callback, 10000);
+        var gabrielVotes = Chats.reduceEntries(match.gabrielChatId);
+        var justoVotes = Chats.reduceEntries(match.justoChatId);
+        Signals.sendVotes(gabrielVotes, justoVotes);
+        Meteor.setTimeout(callback, 5000);
       };
 
-      // Meteor.setTimeout(callback, 10000);
+      Meteor.setTimeout(callback, 5000);
     }
   }
 });

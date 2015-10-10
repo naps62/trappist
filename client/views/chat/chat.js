@@ -11,14 +11,21 @@ Template.chat.helpers({
 
 Template.chat.events({
   'keyup #txtInput': function(event, tpl) {
+    var value = parseInt(event.target.value);
+    event.target.value = '';
+
+    if (!_.isFinite(value) || value < 0 || value > 5) {
+      return;
+    }
+
     newEntry = {
       userId: Meteor.userId(),
-      value: parseInt(event.target.value)
-    }
+      value: value
+    };
+
     Chats.update(Template.instance().data.id, {
       $push: { entries: newEntry }
     });
-    event.target.value = '';
   }
 });
 

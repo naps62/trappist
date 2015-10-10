@@ -8,13 +8,13 @@ Package.onUse(function(api) {
 
   var packages = [
     'ecmascript',
-    'accounts-base',
-    'accounts-password',
-    'accounts-ui',
     'fourseven:scss',
     'kadira:flow-router',
     'kadira:blaze-layout',
-    'mquandalle:jade'
+    'mquandalle:jade',
+    'matches',
+    'chats',
+    'signals'
   ]
 
   api.use(packages);
